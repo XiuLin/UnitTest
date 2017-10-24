@@ -38,7 +38,9 @@ public class ReportItemModelTest {
         Looper mockMainThreadLooper = PowerMockito.mock(Looper.class);
         when(Looper.getMainLooper()).thenReturn(mockMainThreadLooper);
         Handler mockMainThreadHandler = PowerMockito.mock(Handler.class);
-        PowerMockito.whenNew(Handler.class).withArguments(mockMainThreadLooper).thenReturn(mockMainThreadHandler);
+        PowerMockito.whenNew(Handler.class)
+                .withArguments(mockMainThreadLooper)
+                .thenReturn(mockMainThreadHandler);
         when(mockMainThreadHandler.post(any(Runnable.class))).thenAnswer(new Answer() {
 
             @Override
