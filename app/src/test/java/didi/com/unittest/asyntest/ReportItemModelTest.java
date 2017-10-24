@@ -28,7 +28,7 @@ import static org.mockito.Mockito.when;
 @RunWith(PowerMockRunner.class)
 @PrepareForTest(Looper.class)
 
-public class RepoModelTest {
+public class ReportItemModelTest {
 
     @Test
     public void loadRepos() throws Exception {
@@ -51,14 +51,14 @@ public class RepoModelTest {
         Handler handler = new Handler(Looper.getMainLooper());
 
 
-        RepoModel model = new RepoModel(handler);
-        final List<Repo> result = new ArrayList<>();
+        ReportCenter model = new ReportCenter(handler);
+        final List<ReportItem> result = new ArrayList<>();
 
         final CountDownLatch latch = new CountDownLatch(1); //创建CountDownLatch
 
-        model.loadRepos(new RepoModel.RepoCallback() {
+        model.loadReport(new ReportCenter.RepoCallback() {
             @Override
-            public void onSuccess(List<Repo> repos) {
+            public void onSuccess(List<ReportItem> repos) {
                 result.addAll(repos);
                 latch.countDown();  //这里countDown，外面的await()才能结束
             }
