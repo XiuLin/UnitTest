@@ -39,18 +39,6 @@ public class ArithmeticTestOld {
     }
 
 
-
-
-    //不支持时是否会抛出指定异常的单元测试方法大体如下：
-    @Test (expected = NullPointerException.class)
-    public void unSupportType() {
-
-    }
-
-
-
-
-
     /**
      * 1.测试方法必须使用注解 org.junit.Test 修饰。
      * 2.测试方法必须使用 public void 修饰，而且不能带有任何参数。
