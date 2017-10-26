@@ -1,27 +1,23 @@
-package didi.com.unittest.fixturetest;
+package didi.com.unittest.ignoretestcase;
 
 import org.junit.Before;
-import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.io.File;
 
-import didi.com.unittest.common.FileUtils;
+import didi.com.unittest.fixturetest.FixtureTestSample;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 /**
  * Created by didi on 2017/10/25.
  */
-public class FixtureTestSampleTest {
+
+public class IgnoreCaseTest {
 
     File file;
     static int sTimes =0 ;
-
-    //类级别的初始化
-    //@BeforeClass
-
-    //方法级别的初始化
     @Before
     public void init() {
         System.out.print("init times:"+ ++sTimes);
@@ -41,6 +37,7 @@ public class FixtureTestSampleTest {
                 new FixtureTestSample().checkFile(file,null));
     }
 
+    @Ignore("haha")
     @Test
     public void checkNullFile() throws Exception {
 
@@ -48,10 +45,10 @@ public class FixtureTestSampleTest {
                 new FixtureTestSample().checkFile(null,"e21ed1964d0b687c1a8c091e7ba28621e47ec267"));
     }
 
+    @Ignore("hehe")
     @Test
     public void checkFileWrongSHA1() throws Exception {
 
         assertEquals(false,new FixtureTestSample().checkFile(file,"dfsfsf"));
     }
-
 }

@@ -34,13 +34,22 @@ public class ReportItemModelTest {
     public void loadRepos() throws Exception {
 
 
+        //mock Looper class
         PowerMockito.mockStatic(Looper.class);
         Looper mockMainThreadLooper = PowerMockito.mock(Looper.class);
+
+        //当调用Looper.getMainLooper()的时候返回mockMainThreadLooper
         when(Looper.getMainLooper()).thenReturn(mockMainThreadLooper);
+
+        //mock Handler class
         Handler mockMainThreadHandler = PowerMockito.mock(Handler.class);
+
+        //当new Handler(Looper instance)的时候，传入上面的mockMainThreadLooper，和mockMainThreadHandler
         PowerMockito.whenNew(Handler.class)
                 .withArguments(mockMainThreadLooper)
                 .thenReturn(mockMainThreadHandler);
+
+        //当post的时候使用answer
         when(mockMainThreadHandler.post(any(Runnable.class))).thenAnswer(new Answer() {
 
             @Override
@@ -50,6 +59,9 @@ public class ReportItemModelTest {
             }
 
         });
+
+
+        //上面的一堆准备工作都是为了 这行代码。
         Handler handler = new Handler(Looper.getMainLooper());
 
 

@@ -15,30 +15,6 @@ import static org.junit.Assert.assertEquals;
 
 public class ArithmeticTestOld {
 
-
-    //Fixture
-    @Before
-    public void init() {
-        System.out.print("init");
-    }
-
-    @After
-    public void destroy() {
-        System.out.print("destroy");
-    }
-
-    @BeforeClass
-    public void initEx() {
-        System.out.print("initEx");
-    }
-
-    @AfterClass
-    public void destroyEx() {
-        System.out.print("destroyEx");
-
-    }
-
-
     /**
      * 1.测试方法必须使用注解 org.junit.Test 修饰。
      * 2.测试方法必须使用 public void 修饰，而且不能带有任何参数。
