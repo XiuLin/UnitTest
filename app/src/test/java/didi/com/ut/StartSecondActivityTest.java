@@ -2,7 +2,6 @@ package didi.com.ut;
 
 import android.content.Intent;
 
-import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.robolectric.Robolectric;
@@ -25,6 +24,7 @@ public class StartSecondActivityTest {
         MainActivity mainActivity = Robolectric.setupActivity(MainActivity.class);
 
         System.out.print("MainActivity initialized\n");
+
         mainActivity.findViewById(R.id.button).performClick();
 
         Intent expectedIntent = new Intent(mainActivity, SecondActivity.class);
