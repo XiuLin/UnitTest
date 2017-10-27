@@ -18,9 +18,11 @@ import static org.junit.Assert.assertEquals;
 @RunWith(RobolectricTestRunner.class)
 @Config(constants = BuildConfig.class, sdk = 21)
 public class StartSecondActivityTest {
+
     @Test
     public void testMainActivity() throws Exception {
 
+        //这里完成三个生命周期
         MainActivity mainActivity = Robolectric.setupActivity(MainActivity.class);
 
         System.out.print("MainActivity initialized\n");
