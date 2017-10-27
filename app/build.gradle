@@ -21,6 +21,7 @@ android {
     testOptions {
         unitTests.returnDefaultValues = true
     }
+
 }
 
 dependencies {
@@ -35,7 +36,7 @@ dependencies {
             'org.powermock:powermock-module-junit4:1.6.1',
             'org.powermock:powermock-api-mockito:1.6.1'
 
-    testCompile 'org.robolectric:robolectric:3.0-rc3'
-    //testCompile "org.robolectric:robolectric:3.3"
+    //testCompile 'org.robolectric:robolectric:3.0-rc3'
+    testCompile "org.robolectric:robolectric:3.4"
 
 }
