@@ -1,15 +1,20 @@
 package didi.com.ut.activity.life.cycle.test;
 
 import android.app.Activity;
+import android.app.Application;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.robolectric.Robolectric;
 import org.robolectric.RobolectricTestRunner;
+import org.robolectric.RuntimeEnvironment;
 import org.robolectric.annotation.Config;
 
 import didi.com.ut.BuildConfig;
 import didi.com.ut.MainActivity;
+import didi.com.ut.R;
+
+import static org.junit.Assert.assertEquals;
 
 /**
  * Created by didi on 2017/10/26.
@@ -32,7 +37,6 @@ public class LifeCycleTest {
                 get();
 
         System.out.print("MainActivity lifecycle finished......\n");
-
 
     }
 }

@@ -8,6 +8,7 @@ import org.junit.runners.Parameterized;
 
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.concurrent.TimeUnit;
 
 import static org.junit.Assert.*;
 
@@ -24,7 +25,7 @@ public class ArithmeticTest {
 
 
     @Rule
-    public Timeout timeout = new Timeout(1000);  //使用Timeout这个 Rule，
+    public Timeout timeout = new Timeout(1000, TimeUnit.MILLISECONDS);  //使用Timeout这个 Rule，
 
     /**
      * 参数化测试必须的构造函数

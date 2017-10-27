@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">UnitTest</string>
+    <string name="app_father_name">Unit-Father-Test</string>
+    <string name="app_mother_name">Unit-Mother-Test</string>
 </resources>

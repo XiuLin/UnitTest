@@ -39,4 +39,6 @@ dependencies {
     //testCompile 'org.robolectric:robolectric:3.0-rc3'
     testCompile "org.robolectric:robolectric:3.4"
 
+    testCompile 'org.robolectric:shadows-httpclient:3.0'
+
 }
